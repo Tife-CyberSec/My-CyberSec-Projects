@@ -1,6 +1,6 @@
 # Network Security Lab
 
-This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, and Kali Linux to explore how networks are set up, monitored, and attacked — and why security controls matter.
+This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, and Kali Linux to explore how networks are set up, monitored, and attacked; and why security controls matter.
 
 ---
 
@@ -16,7 +16,7 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 - Captured and analyzed traffic in real time.  
 - Filtered **HTTP requests**, observed **ICMP packets**, and inspected data flows.  
 - Realized this mirrors what **SOC analysts** do to spot suspicious activity.  
-- Noted how attackers can misuse the same tool for packet sniffing — reinforcing why secure protocols (TLS/HTTPS) are critical.
+- Noted how attackers can misuse the same tool for packet sniffing, reinforcing why secure protocols (TLS/HTTPS) are critical.
 
 ---
 
@@ -35,5 +35,5 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 
 ---
 
-## 📝 Takeaway
+## 📝 Lessons Learned
 This project showed me how attackers think, how defenders respond, and why even “simple” security practices like **encryption, segmentation, and monitoring** are essential in protecting networks.
