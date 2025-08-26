@@ -23,7 +23,7 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 ---
 
 ## 3. Simulating an ICMP Flood Attack
-![ICMP Flood](./icmpflood.png)
+![ICMP Flood](./ICMPFlood.png)
 - Launched an **ICMP flood attack** from my Kali Linux VM to my Windows machine.  
 - Target system quickly became overwhelmed, showing high latency in Wireshark.  
 - Understood how this small-scale test mimics real-world **DDoS attacks**.  
