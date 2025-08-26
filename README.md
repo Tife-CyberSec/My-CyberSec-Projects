@@ -1,4 +1,4 @@
-# My Cybersecurity Projects 🔐
+# My Cybersecurity Projects 👩‍💻
 
 Welcome! This repository contains my hands-on labs and projects as I document my cybersecurity journey.
 
