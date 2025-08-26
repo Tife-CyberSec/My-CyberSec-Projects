@@ -1,6 +1,6 @@
 # My Cybersecurity Projects 🔐
 
-Welcome! This repo showcases my hands-on labs and projects as I learn cybersecurity.
+Welcome! This repository contains my hands-on labs and projects as I document my cybersecurity journey.
 
 ## Projects
 
