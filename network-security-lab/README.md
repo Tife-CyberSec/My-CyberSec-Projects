@@ -6,6 +6,7 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 
 ## 1. Setting Up and Securing a Network
 <img src="./vlansetup.jpg" alt="VLAN Setup in Packet Tracer" width="500"/>
+
 - Built a small enterprise network in **Cisco Packet Tracer**.  
 - Configured **VLANs** to segment traffic.  
 - Applied **router ACLs** to filter traffic by IP, ports, and protocols (like basic firewall rules).  
@@ -15,6 +16,7 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 
 ## 2. Monitoring Traffic with Wireshark
 <img src="./Wireshark-http.jpg" alt="Wireshark HTTP Capture" width="500"/>
+
 - Captured and analyzed traffic in real time.  
 - Filtered **HTTP requests**, observed **ICMP packets**, and inspected data flows.  
 - Realized this mirrors what **SOC analysts** do to spot suspicious activity.  
@@ -24,6 +26,7 @@ This lab combines several hands-on exercises in Cisco Packet Tracer, Wireshark, 
 
 ## 3. Simulating an ICMP Flood Attack
 <img src="./ICMPFlood.png" alt="ICMP Flood Attack" width="500"/>
+
 - Launched an **ICMP flood attack** from my Kali Linux VM to my Windows machine.  
 - Target system quickly became overwhelmed, showing high latency in Wireshark.  
 - Understood how this small-scale test mimics real-world **DDoS attacks**.  
