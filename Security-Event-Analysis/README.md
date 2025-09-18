@@ -3,11 +3,11 @@
 This folder documents my **hands-on SOC/Blue Team journey** — starting from beginner and building up to intermediate/advanced projects like threat hunting, incident response, and playbook creation.  
 
 Each week/project includes:
-- 🎯 **Objective** – what I’m learning
-- 🛠️ **Steps** – how I did it
-- 📸 **Screenshots** – proof/evidence
-- 🔍 **Analysis** – it's real-world application
-- 📝 **Reflection** – my takeaways
+- **Objective** – what I’m learning
+- **Steps** – how I did it
+- **Screenshots** – proof/evidence
+- **Analysis** – details with it's real-world application
+- **Reflection** – my takeaways
 
 ---
 
