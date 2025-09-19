@@ -12,18 +12,24 @@ The goal was simple: make Windows talk, capture the activity, and interpret what
 
 ## 🔍 What I Did
 - Enabled auditing so Windows records both successful and failed logons.  
+ <img src="./Powershell Snip.png" alt="Auditing Policy" width="500"/>
 - Created a test user account (`X-User`) to simulate activity.  
 - Attempted both **failed logins** (wrong password) and **successful logins** (correct password).  
-- Used Event Viewer to track what really happened under the hood.  
+- Used Event Viewer to track what really happened under the hood.
+  <img src="./Event Viewer Snip.png" alt="Successful Login" width="500"/>
+  <img src="./Event Viewer Snip2.png" alt="Wrong Password" width="500"/>
+
+
 
 ---
 
 ## 📸 Findings
 
 ### Failed Logon – Event ID 4625
-![failed_logon](./failed_logon_4625.png)  
+![failed_logon](./Powershell Snip3.png)  
 - Account targeted: `X-User`  
-- Failure reason: *Unknown username or bad password*  
+- Failure reason: *Unknown username or bad password*
+![failed_logon](./Powershell Snip4.png)
 - Logon type: `2` (interactive – console login)  
 - Source network address: `127.0.0.1`  
 
