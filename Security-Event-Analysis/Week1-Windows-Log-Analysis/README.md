@@ -26,10 +26,10 @@ The goal was simple: make Windows talk, capture the activity, and interpret what
 ## 📸 Findings
 
 ### Failed Logon – Event ID 4625
-![failed_logon](./Powershell Snip3.png)  
+<img src="./Powershell Snip3.png" alt="Failed logon!" width="500"/>
 - Account targeted: `X-User`  
 - Failure reason: *Unknown username or bad password*
-![failed_logon](./Powershell Snip4.png)
+<img src="./Powershell Snip4.png" alt="Failed logon!" width="500"/>
 - Logon type: `2` (interactive – console login)  
 - Source network address: `127.0.0.1`  
 
