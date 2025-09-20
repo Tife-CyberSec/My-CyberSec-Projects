@@ -14,7 +14,7 @@ Each week/project includes:
 ## 📅 Lab Roadmap
 
 ### 🔹 Beginner
-1. [Windows Log Analysis (4624 & 4625 Events)](Security-Event-Analysis/Week1-Windows-Log-Analysis)  
+1. [Windows Log Analysis (4624 & 4625 Events)](https://github.com/Tife-CyberSec/My-CyberSec-Projects/tree/master/Security-Event-Analysis/Week1-Windows-Log-Analysis)  
 2. Packet Capture & Analysis  
 3. Linux Syslog Analysis  
 4. SIEM Basics with Splunk/ELK  
