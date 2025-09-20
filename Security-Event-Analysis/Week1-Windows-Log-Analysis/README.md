@@ -22,8 +22,8 @@ The objective was to simulate both normal and suspicious activity, capture the e
   - **Failed logins** (wrong password).  
   - **Successful logins** (correct password).  
 - Tracked the evidence in **Event Viewer**.  
-  <img src="./Event Viewer Snip.png" alt="Successful Login" width="500"/>  
-  <img src="./Event Viewer Snip2.png" alt="Failed Login" width="500"/>  
+  <img src="./Event Viewer Snip.PNGg" alt="Successful Login" width="500"/>  
+  <img src="./Event Viewer Snip2.PNG" alt="Failed Login" width="500"/>  
 
 ---
 
@@ -43,7 +43,7 @@ The objective was to simulate both normal and suspicious activity, capture the e
 ---
 
 ### 🟢 Successful Logon – Event ID 4624
-<img src="./Event Viewer Snip2.png" alt="Successful logon" width="500"/>  
+<img src="./Event Viewer Snip2.PNG " alt="Successful logon" width="500"/>  
 - Account logged in: `X-User`  
 - Authentication package: NTLM  
 - Logon type: `2` (interactive)  
