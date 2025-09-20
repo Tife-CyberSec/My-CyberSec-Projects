@@ -1,71 +1,78 @@
 # Week 1 – Windows Logon Event Analysis (4624 & 4625)
 
 ## 📝 Overview
-Authentication is one of the first places attackers test their luck.  
-If they can guess, brute force, or steal credentials, they’re in.  
-As a SOC analyst, one of your earliest alerts will often come from **Windows logon events**.  
+Authentication is one of the first doors attackers test.  
+If they can guess, brute force, or steal credentials—they’re in.  
 
-In this lab, I explored **Event IDs 4624 (successful logon)** and **4625 (failed logon)**.  
-The goal was simple: make Windows talk, capture the activity, and interpret what those events are telling us.
+As a SOC analyst, some of the earliest alerts you’ll handle come from **Windows logon events**.  
+In this lab, I focused on two key Event IDs:  
+- **4624 – Successful Logon**  
+- **4625 – Failed Logon**  
+
+The objective was to simulate both normal and suspicious activity, capture the evidence, and interpret what the logs reveal.
 
 ---
 
 ## 🔍 What I Did
-- Enabled auditing so Windows records both successful and failed logons.  
- <img src="./Powershell Snip.png" alt="Auditing Policy" width="500"/>
-- Created a test user account (`X-User`) to simulate activity.  
-- Attempted both **failed logins** (wrong password) and **successful logins** (correct password).  
-- Used Event Viewer to track what really happened under the hood.
-  <img src="./Event Viewer Snip.png" alt="Successful Login" width="500"/>
-  <img src="./Event Viewer Snip2.png" alt="Wrong Password" width="500"/>
+- Enabled auditing for successful and failed logons.  
+  <img src="./Powershell Snip.png" alt="Audit Policy Enabled" width="500"/>  
 
-
+- Created a test user account (`X-User`) for simulations.  
+- Generated activity by attempting:  
+  - **Failed logins** (wrong password).  
+  - **Successful logins** (correct password).  
+- Tracked the evidence in **Event Viewer**.  
+  <img src="./Event Viewer Snip.png" alt="Successful Login" width="500"/>  
+  <img src="./Event Viewer Snip2.png" alt="Failed Login" width="500"/>  
 
 ---
 
 ## 📸 Findings
 
-### Failed Logon – Event ID 4625
-<img src="./Powershell Snip3.png" alt="Failed logon!" width="500"/>
+### 🔴 Failed Logon – Event ID 4625
+<img src="./Powershell Snip3.png" alt="Failed logon PowerShell" width="500"/>  
 - Account targeted: `X-User`  
-- Failure reason: *Unknown username or bad password*
-<img src="./Powershell Snip4.png" alt="Failed logon!" width="500"/>
+- Failure reason: *Unknown username or bad password*  
+
+<img src="./Powershell Snip4.png" alt="Failed logon details" width="500"/>  
 - Logon type: `2` (interactive – console login)  
 - Source network address: `127.0.0.1`  
 
-👉 This is exactly how brute-force attempts or password guessing would show up in logs.  
+👉 This is how brute-force attempts or password guessing appear in logs.  
 
 ---
 
-### Successful Logon – Event ID 4624
-![successful_logon](./successful_logon_4624.png)  
+### 🟢 Successful Logon – Event ID 4624
+<img src="./Event Viewer Snip2.png" alt="Successful logon" width="500"/>  
 - Account logged in: `X-User`  
 - Authentication package: NTLM  
-- Logon type: `2` (interactive login)  
+- Logon type: `2` (interactive)  
 
-👉 A normal logon looks harmless, but in a SOC, multiple successful logins after repeated failures could mean an attacker **finally got the password right**.  
-
----
-
-### Filtered View
-![filtered_view](./filtered_view.png)  
-By filtering only for Event IDs `4624` and `4625`, the noise disappears.  
-What’s left is a clear timeline of **who tried to log in, when, and whether they succeeded**.  
+👉 By itself, this looks normal. But in a SOC scenario, multiple `4625` failures followed by a `4624` could mean an attacker finally cracked the password.  
 
 ---
 
-## 🎯 Why This Matters
-In the real world:  
-- **One or two 4625s** → probably a user mistyping their password.  
-- **Dozens of 4625s** → brute force attack.  
+### 🎛 Filtering Events
+After filtering only for `4624` and `4625`, the noise dropped away.  
+What remained was a clear timeline of:  
+- **Who tried to log in**  
+- **When it happened**  
+- **Whether they succeeded**  
+
+---
+
+## Why This Matters
+In real-world monitoring:  
+- **1–2 x 4625s** → likely a user mistyping their password.  
+- **Dozens of 4625s** → possible brute force attempt.  
 - **4625 flood + sudden 4624** → attacker just broke in.  
 
-SOC analysts use exactly this type of analysis to build correlation rules and trigger alerts in SIEMs.  
+SOC teams build rules and alerts around exactly this type of behavior.  
 
 ---
 
-## 💡 Reflection
-Before this, “logon events” were just numbers to me.  
-Now, I understand how they tell a story: *a failed attempt, persistence, eventual success*.  
-That story is what separates normal user behavior from a potential breach.  
+## Reflection
+Before this, logon events felt like random numbers.  
+Now I see how they tell a story: *failed attempts, persistence, and eventual success*.  
 
+That story is what transforms raw logs into **actionable intelligence**.  
